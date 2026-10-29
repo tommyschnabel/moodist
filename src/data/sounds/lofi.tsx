@@ -5,35 +5,47 @@ import type { Category } from '../types';
 
 import { getAssetPath } from '@/helpers/path';
 
-// CC0 loops from freesound.org (holizna, Dpath).
-// All loops are 95 BPM and a whole number of bars so they can be layered.
+// CC0 loops from freesound.org (holizna).
+// All loops are 90 BPM and a whole number of bars so they can be layered.
 export const lofi: Category = {
   icon: <FaMusic />,
   id: 'lofi',
   sounds: [
     {
-      icon: <GiPianoKeys />,
-      id: 'lofi-e-piano',
-      label: 'E-Piano',
-      src: getAssetPath('/sounds/lofi/e-piano.wav'),
-    },
-    {
-      icon: <GiPianoKeys />,
-      id: 'lofi-piano',
-      label: 'Piano',
-      src: getAssetPath('/sounds/lofi/piano.wav'),
-    },
-    {
-      icon: <FaMusic />,
-      id: 'lofi-jazz-organ',
-      label: 'Jazz Organ',
-      src: getAssetPath('/sounds/lofi/jazz-organ.wav'),
+      icon: <FaDrum />,
+      id: 'lofi-boom-bap-drums',
+      label: 'Boom Bap Drums',
+      src: getAssetPath('/sounds/lofi/boom-bap-drums.wav'),
     },
     {
       icon: <FaDrum />,
-      id: 'lofi-dusty-drums',
-      label: 'Dusty Drums',
-      src: getAssetPath('/sounds/lofi/dusty-drums.wav'),
+      id: 'lofi-percussion',
+      label: 'Percussion',
+      src: getAssetPath('/sounds/lofi/percussion.wav'),
+    },
+    {
+      icon: <GiPianoKeys />,
+      id: 'lofi-organ',
+      label: 'Organ',
+      src: getAssetPath('/sounds/lofi/organ.wav'),
+    },
+    {
+      icon: <FaMusic />,
+      id: 'lofi-melody',
+      label: 'Melody',
+      src: getAssetPath('/sounds/lofi/melody.wav'),
+    },
+    {
+      icon: <FaMusic />,
+      id: 'lofi-siberian',
+      label: 'Siberian',
+      src: getAssetPath('/sounds/lofi/siberian.wav'),
+    },
+    {
+      icon: <FaMusic />,
+      id: 'lofi-spacey',
+      label: 'Spacey',
+      src: getAssetPath('/sounds/lofi/spacey.wav'),
     },
   ],
   title: 'Lofi',
