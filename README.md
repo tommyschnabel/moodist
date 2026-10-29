@@ -78,3 +78,19 @@ Some sounds used in this project are sourced from third-party providers and **ar
 
 - Sounds licensed under the **Pixabay Content License**: [Pixabay Content License](https://pixabay.com/service/license-summary/)
 - Sounds licensed under **CC0**: [Creative Commons Zero License](https://creativecommons.org/publicdomain/zero/1.0/)
+
+#### Lofi loops
+
+The loops in the Lofi category (`public/sounds/lofi/`) are by
+[holizna](https://freesound.org/people/holizna/) on Freesound, released under
+[CC0](https://creativecommons.org/publicdomain/zero/1.0/). Credit isn't
+required, but holizna asks for it, so here it is. Thank you!
+
+| Tile | Original |
+|------|----------|
+| Boom Bap Drums | [BoomBap Drums 90 BPM](https://freesound.org/people/holizna/sounds/629139/) |
+| Percussion | [Perc Loop 90 BPM](https://freesound.org/people/holizna/sounds/621184/) |
+| Organ | [Lofi organ loop Gmaj 90 BPM](https://freesound.org/people/holizna/sounds/629163/) |
+| Melody | [Lofi melody loop Gmaj 90 BPM](https://freesound.org/people/holizna/sounds/629162/) |
+| Siberian | [Siberian (Lo-Fi Loop) Emin 90 BPM](https://freesound.org/people/holizna/sounds/852232/) |
+| Spacey | [Spacey Lofi Loop 90 BPM](https://freesound.org/people/holizna/sounds/629161/) |

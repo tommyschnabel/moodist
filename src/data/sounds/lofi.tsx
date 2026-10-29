@@ -5,7 +5,7 @@ import type { Category } from '../types';
 
 import { getAssetPath } from '@/helpers/path';
 
-// CC0 loops from freesound.org (holizna).
+// CC0 loops by holizna on freesound.org; credits in README.md.
 // All loops are 90 BPM and a whole number of bars so they can be layered.
 export const lofi: Category = {
   icon: <FaMusic />,
