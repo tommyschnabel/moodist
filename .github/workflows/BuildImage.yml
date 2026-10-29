@@ -1,0 +1,38 @@
+name: Build Image
+
+# Build-validation only: there is no container registry, so the image is built
+# and thrown away. Catches a broken Dockerfile before `make up` on ai2 does.
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+        with:
+          # The buildkit container otherwise lands on the default bridge and
+          # cannot reach the runner's cache server, so every cache push times out.
+          driver-opts: network=tommy_default
+          # buildkit is thrown away after every job, so without a mirror each
+          # build re-pulls its base image from Hub and trips the anonymous
+          # rate limit. registry_mirror resolves over tommy_default.
+          config-inline: |
+            [registry."docker.io"]
+              mirrors = ["registry_mirror:5000"]
+            [registry."registry_mirror:5000"]
+              http = true
+
+      - name: Build moodist
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: false
+          cache-from: type=gha,scope=moodist
+          cache-to: type=gha,mode=max,scope=moodist
