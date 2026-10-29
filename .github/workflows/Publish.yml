@@ -1,0 +1,38 @@
+name: Publish Image
+
+# GitHub builds and publishes the image to ghcr; ai2 pulls the tag pinned in
+# containerized/ai2/docker-compose.tools.yml. The Gitea build check lives in
+# .gitea/workflows, which Gitea prefers over this directory.
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: docker/setup-buildx-action@v4
+
+      - uses: docker/build-push-action@v7
+        with:
+          context: .
+          platforms: linux/amd64
+          push: true
+          tags: ghcr.io/${{ github.repository }}:${{ github.ref_name }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
